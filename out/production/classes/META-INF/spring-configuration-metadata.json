@@ -1,0 +1,11 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "compofinalproject.demo.config.DataLoader",
+      "name": "server",
+      "type": "compofinalproject.demo.config.DataLoader"
+    }
+  ],
+  "properties": []
+}
