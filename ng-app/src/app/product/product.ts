@@ -3,6 +3,6 @@ export class Product {
   productName: string;
   image: string;
   price: number;
-  Amount: number;
+  amount: number;
   description: string;
 }

@@ -10,11 +10,16 @@ import {UserAddComponent} from "./user/user-add/user-add.component";
 import {UserDeleteComponent} from "./user/user-delete/user-delete.component";
 import {TransactionComponent} from "./transection/transection/transaction.component";
 import {NgModule} from "@angular/core";
+import {ProductViewComponent} from './product/product-view/product-view.component';
 
 const appRoute: Routes =[
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'detail/:id',
+    component: ProductViewComponent
   },
 
   {

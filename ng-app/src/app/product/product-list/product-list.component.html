@@ -9,12 +9,23 @@
     </div>
     <div class="panel-body">
       <div>
-        <!--<img class="img-responsive" [src]="product.image" [title] = "product.name">-->
-        <p>{{product.productName}}</p>
-        <p>Amount of product: {{product.Amount}}</p>
-        <p>Product description: {{product.description}}</p>
+        <div>
+        <img class="img-responsive" [src]="product.image" [title] = "product.productName">
+        </div>
+        <div>
+        <p>description: {{product.description}}</p>
         <p>Price: {{product.price}}</p>
+        </div>
       </div>
+      <div class="row">
+        <div class="center col-sm-12 ">
+          <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="downQuantity(product)">-</button>
+          <input type="text" style="text-align: center;" class="col-md-4" [(ngModel)]="product.amount"/>
+          <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="upQuantity(product)">+</button>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="downQuantity(product)">Add</button>
+      <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="showDetail(product)">Detail</button>
     </div>
   </div>
 </div>

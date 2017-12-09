@@ -1,3 +1,4 @@
+///<reference path="../../node_modules/@angular/forms/src/form_providers.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -20,6 +21,8 @@ import { UserAddComponent } from './user/user-add/user-add.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
 import {AppRoutingModule} from "./app-routing-module";
 import {ProductDataService} from "./service/product-data-service";
+import {HttpModule} from "@angular/http";
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,7 @@ import {ProductDataService} from "./service/product-data-service";
     UserDeleteComponent
   ],
   imports: [
-    BrowserModule,AppRoutingModule
+    BrowserModule, AppRoutingModule, HttpModule, FormsModule
   ],
   providers: [ProductDataService],
   bootstrap: [AppComponent]

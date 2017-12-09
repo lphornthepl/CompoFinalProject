@@ -1,48 +1,30 @@
 import {Injectable} from "@angular/core";
 import {Product} from "../product/product";
-import {Observable} from "rxjs/Observable";
-import {Subscriber} from "rxjs/Subscriber";
 import 'rxjs/add/operator/map';
+import {Http,Response} from "@angular/http";
 
 @Injectable()
 export class ProductDataService {
-  products: Product[] = [
-    {
-      productId: "1",
-      productName: "Laap",
-      Amount: 5,
-      description: "Best food ever!!!",
-      price: 100,
-      image: "Laap mu.jpg"
-    },
-    {
-      productId: "2",
-      productName: "Lu",
-      Amount: 10,
-      description: "Blood sup!!!",
-      price: 100,
-      image: "Lu mu.jpg"
-    },
-    {
-      productId: "3",
-      productName: "App mu",
-      Amount: 5,
-      description: "The good one!!!",
-      price: 100,
-      image: "App mu.jpg"
-    },
-    {
-      productId: "4",
-      productName: "Coke",
-      Amount: 5,
-      description: "Bigbang!!!",
-      price: 100,
-      image: "App mu.jpg"
-    }
+  constructor(private http: Http) {}
 
-  ];
+  getProductData() {
+    let productArray: Product[];
+    return this.http.get('http://localhost:8080/product')
+      .map(res => res.json());
+  }
 
-  getProductsData(){
-    return Observable.create((subscriber:Subscriber<Product[]>)=>subscriber.next(this.products));
+  getProduct(id: number) {
+    let product:Product;
+    return this.http.get('http://localhost:8080/product/'+id)
+      .map((res:Response) => {
+        if (res){
+          if (res.status === 200){
+            return res.json();
+          }
+          if (res.status === 204){
+            return null;
+          }
+        }
+      });
   }
 }
