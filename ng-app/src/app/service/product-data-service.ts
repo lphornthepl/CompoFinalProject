@@ -7,10 +7,15 @@ import {Http,Response} from "@angular/http";
 export class ProductDataService {
   constructor(private http: Http) {}
 
+  public productInCart : Product[] = [];
   getProductData() {
     let productArray: Product[];
     return this.http.get('http://localhost:8080/product')
       .map(res => res.json());
+  }
+
+  getProductIncart(){
+    return this.productInCart;
   }
 
   getProduct(id: number) {
@@ -27,4 +32,9 @@ export class ProductDataService {
         }
       });
   }
+
+  addToCart(product: Product) {
+    this.productInCart.push(product);
+  }
+
 }
