@@ -2,10 +2,21 @@
   "hints": [],
   "groups": [
     {
+      "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
+      "name": "server",
+      "type": "compofinalproject.demo.service.CustomerServiceImpl"
+    },
+    {
       "sourceType": "compofinalproject.demo.config.DataLoader",
       "name": "server",
       "type": "compofinalproject.demo.config.DataLoader"
     }
   ],
-  "properties": []
+  "properties": [
+    {
+      "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
+      "name": "server.customers",
+      "type": "java.util.List<compofinalproject.demo.entity.Customer>"
+    }
+  ]
 }
