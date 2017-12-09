@@ -50,9 +50,14 @@ const appRoute: Routes =[
     component: TransactionComponent
   },
   {
+    path: '',
+    redirectTo: '/product',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     component: FileNotFoundComponent
-  }
+  },
 
 ];
 
