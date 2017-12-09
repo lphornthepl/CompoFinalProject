@@ -1,3 +1,22 @@
-<p>
-  product-list works!
-</p>
+<div class="row col-lg-12 center-pill">
+<div *ngFor="let product of products" class="col-lg-4">
+  <!--<div class="col-lg-1">-->
+    <!--&lt;!&ndash;blank&ndash;&gt;-->
+  <!--</div>-->
+  <div class="panel panel-primary col-lg-12">
+    <div class="page-header">
+      <h2 class="panel-title">{{product.productName}}</h2>
+    </div>
+    <div class="panel-body">
+      <div>
+        <!--<img class="img-responsive" [src]="product.image" [title] = "product.name">-->
+        <p>{{product.productName}}</p>
+        <p>Amount of product: {{product.Amount}}</p>
+        <p>Product description: {{product.description}}</p>
+        <p>Price: {{product.price}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
