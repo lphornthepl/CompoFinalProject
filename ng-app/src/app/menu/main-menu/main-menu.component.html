@@ -1,6 +1,7 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
+<div style="overflow: auto;">
+<nav class="navbar navbar-inverse navbar center">
+  <div class="container-fluid col-lg-12 navbar-static-top">
+    <ul class="nav navbar-nav" style="padding: 0%;">
       <li role="presentation" routerLinkActive="active"><a routerLink="/product">Product</a></li>
       <li role="presentation" routerLinkActive="active"><a routerLink="/add_product">Add product</a></li>
       <li role="presentation" routerLinkActive="active"><a routerLink="/edit_product">Edit product</a></li>
@@ -10,8 +11,10 @@
         transaction</a></li>
       <li role="presentation" routerLinkActive="active"><a routerLink="/add_user">Add shopkeeper</a></li>
       <li role="presentation" routerLinkActive="active"><a routerLink="/delete_user">Delete user</a></li>
-      <li role="presentation" routerLinkActive="active">
-        <form class="navbar-form navbar-right">
+    </ul>
+      <ul class="nav navbar-right navbar-nav" style="padding: 0%;">
+      <li class="right" role="presentation" routerLinkActive="active">
+        <form class="navbar-form navbar-static-top">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search">
             <div class="input-group-btn">
@@ -32,3 +35,4 @@
     </ul>
   </div>
 </nav>
+</div>
