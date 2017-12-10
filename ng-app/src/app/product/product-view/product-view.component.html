@@ -1,6 +1,7 @@
 <div [hidden]="!isNoData">
   <div class="alert alert-danger" role="alert">There is no data for the specific id</div>
 </div>
+<<<<<<< HEAD
   <div class="col-lg-12 panel panel-group panel-primary" [hidden]="isNoData">
     <form class="form-horizontal">
       <div class="form-group">
@@ -14,6 +15,14 @@
         <div class="col-sm-10">
           {{product?.name}}
         </div>
+=======
+<div [hidden] = "isNoData">
+  <form class="form-horizontal ">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Product name : </label>
+      <div class="col-sm-10">
+        {{product?.productName}}
+>>>>>>> b26716bd08bb307a0ae1d0ed48ce63e7a7e97966
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label">File input : </label>

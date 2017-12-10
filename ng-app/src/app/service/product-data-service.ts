@@ -7,10 +7,15 @@ import {Http,Response} from "@angular/http";
 export class ProductDataService {
   constructor(private http: Http) {}
 
+  public productInCart : Product[] = [];
   getProductData() {
     let productArray: Product[];
     return this.http.get('http://localhost:8080/product')
       .map(res => res.json());
+  }
+
+  getProductIncart(){
+    return this.productInCart;
   }
 
   getProduct(id: number) {
@@ -28,6 +33,7 @@ export class ProductDataService {
       });
   }
 
+<<<<<<< HEAD
   findProduct(search:string){
     let products: Product;
     let params: URLSearchParams = new URLSearchParams();
@@ -39,4 +45,10 @@ export class ProductDataService {
     return this.http.get('http://localhost:8080/products/',{search:params})
       .map(res => res.json());
   }
+=======
+  addToCart(product: Product) {
+    this.productInCart.push(product);
+  }
+
+>>>>>>> b26716bd08bb307a0ae1d0ed48ce63e7a7e97966
 }

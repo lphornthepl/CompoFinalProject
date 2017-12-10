@@ -27,4 +27,9 @@ export class ProductViewComponent implements OnInit {
       );
   }
 
+  addToCart(product: Product){
+
+
+  }
+
 }

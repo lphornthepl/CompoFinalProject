@@ -2,14 +2,19 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
+      "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
       "name": "server",
-      "type": "compofinalproject.demo.service.CustomerServiceImpl"
+      "type": "compofinalproject.demo.service.ShopkeeperServiceImpl"
     },
     {
       "sourceType": "compofinalproject.demo.config.DataLoader",
       "name": "server",
       "type": "compofinalproject.demo.config.DataLoader"
+    },
+    {
+      "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
+      "name": "server",
+      "type": "compofinalproject.demo.service.CustomerServiceImpl"
     }
   ],
   "properties": [
@@ -17,6 +22,11 @@
       "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
       "name": "server.customers",
       "type": "java.util.List<compofinalproject.demo.entity.Customer>"
+    },
+    {
+      "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
+      "name": "server.shopkeepers",
+      "type": "java.util.List<compofinalproject.demo.entity.Shopkeeper>"
     }
   ]
 }
