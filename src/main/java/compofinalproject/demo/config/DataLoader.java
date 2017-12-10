@@ -3,8 +3,10 @@ package compofinalproject.demo.config;
 
 import compofinalproject.demo.dao.CustomerDao;
 import compofinalproject.demo.dao.ProductDao;
+import compofinalproject.demo.dao.ShopkeeperDao;
 import compofinalproject.demo.entity.Customer;
 import compofinalproject.demo.entity.Product;
+import compofinalproject.demo.entity.Shopkeeper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -31,6 +33,14 @@ public class DataLoader  implements ApplicationRunner {
     @Autowired
     public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
+    }
+
+    @Autowired
+    ShopkeeperDao shopkeeperDao;
+
+    @Autowired
+    public void setShopkeeperDao(ShopkeeperDao shopkeeperDao) {
+        this.shopkeeperDao = shopkeeperDao;
     }
 
     String baseUrl;
@@ -67,12 +77,21 @@ public class DataLoader  implements ApplicationRunner {
                 .username("nekky").password("eiei").moreInformation("eiei i'm newbie").build();
         Customer customer2 = Customer.builder().CustomerId(002).CustomerName("passakorn").CustomerSurname("khunchai")
                 .username("puparadox").password("eiei").moreInformation("411/145 bra bra bra").build();
+        Customer customer3 = Customer.builder().CustomerId(003).CustomerName("siriganya").CustomerSurname("supa")
+                .username("bambam").password("eiei").moreInformation("101/001 bra bra bra").build();
+
 
         customerDao.addCustomer(customer1);
         customerDao.addCustomer(customer2);
+        customerDao.addCustomer(customer3);
 
+        Shopkeeper shopkeeper1 = Shopkeeper.builder().ShopkeeperId(501).ShopkeeperName("Kitipan").ShopkeeperSurname("panyapuhin")
+                .username("jamez").password("jamezeiei").moreInformation("eiei").build();
+        Shopkeeper shopkeeper2 = Shopkeeper.builder().ShopkeeperId(502).ShopkeeperName("Ranate").ShopkeeperSurname("srinoi")
+                .username("xsister").password("xsister").moreInformation("hahaha").build();
 
-
+        shopkeeperDao.addShopkeeper(shopkeeper1);
+        shopkeeperDao.addShopkeeper(shopkeeper2);
 
     }
 }

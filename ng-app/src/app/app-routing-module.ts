@@ -4,13 +4,14 @@ import {CartListComponent} from "./cart/cart-list/cart-list.component";
 import {ProductAddComponent} from "./product/product-add/product-add.component";
 import {ProductDeleteComponent} from "./product/product-delete/product-delete.component";
 import {ProductEditComponent} from "./product/product-edit/product-edit.component";
-import {LoginComponent} from "./login/login/login.component";
+
 import {FileNotFoundComponent} from "./file-not-found/file-not-found/file-not-found.component";
 import {UserAddComponent} from "./user/user-add/user-add.component";
 import {UserDeleteComponent} from "./user/user-delete/user-delete.component";
 import {TransactionComponent} from "./transection/transection/transaction.component";
 import {NgModule} from "@angular/core";
 import {ProductViewComponent} from './product/product-view/product-view.component';
+import {LoginComponent} from './login/login.component';
 
 const appRoute: Routes =[
   {

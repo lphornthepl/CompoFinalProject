@@ -33,6 +33,9 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
+    public List<Product> findProduct(String searchName) {return productRepository.findByProductNameIgnoreCaseContaining(searchName);}
+
+    @Override
     public Product addProduct(Product product) {
         return productRepository.save(product);
     }

@@ -19,7 +19,7 @@ export class ProductDataService {
   }
 
   getProduct(id: number) {
-    let product:Product;
+    let products: Product;
     return this.http.get('http://localhost:8080/product/'+id)
       .map((res:Response) => {
         if (res){
@@ -33,8 +33,22 @@ export class ProductDataService {
       });
   }
 
+<<<<<<< HEAD
+  findProduct(search:string){
+    let products: Product;
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('search',search);
+    let headers = new Headers({
+      // 'Content-type': 'application/json',
+      // 'Authorization': 'Bearer ' + this.authenticationService.getToken()
+    });
+    return this.http.get('http://localhost:8080/products/',{search:params})
+      .map(res => res.json());
+  }
+=======
   addToCart(product: Product) {
     this.productInCart.push(product);
   }
 
+>>>>>>> b26716bd08bb307a0ae1d0ed48ce63e7a7e97966
 }
