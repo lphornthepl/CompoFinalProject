@@ -25,16 +25,6 @@ export class ProductListComponent implements OnInit {
 
     }
 
-  upQuantity(product: Product) {
-    product.amount++;
-  }
-
-  downQuantity(product: Product) {
-    if (product.amount > 1)
-      product.amount--;
-  }
-
-
 
   addToCart(product: Product) {
     // var same = false;

@@ -50,10 +50,10 @@ public class DataLoader  implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         imageBaseUrl = baseUrl + imageUrl;
         Product product1 = Product.builder().productId("001").productName("Mama").image(imageBaseUrl+"mama.jpg").price(15).Amount(1).description("mama").build();
-        Product product2 = Product.builder().productId("002").productName("Cookie").image(imageBaseUrl+"cookie.jpg").price(10).Amount(3).description("Homemade Cookie").build();
-        Product product3 = Product.builder().productId("003").productName("Lay").image(imageBaseUrl+"lay.jpg").price(25).Amount(2).description("Lay Big size").build();
-        Product product4 = Product.builder().productId("004").productName("Bento").image(imageBaseUrl+"bento.jpg").price(10).Amount(4).description("spicy bento").build();
-        Product product5 = Product.builder().productId("005").productName("Tawan").image(imageBaseUrl+"tawan.jpg").price(20).Amount(2).description("tawan original").build();
+        Product product2 = Product.builder().productId("002").productName("Cookie").image(imageBaseUrl+"cookie.jpg").price(10).Amount(1).description("Homemade Cookie").build();
+        Product product3 = Product.builder().productId("003").productName("Lay").image(imageBaseUrl+"lay.jpg").price(25).Amount(1).description("Lay Big size").build();
+        Product product4 = Product.builder().productId("004").productName("Bento").image(imageBaseUrl+"bento.jpg").price(10).Amount(1).description("spicy bento").build();
+        Product product5 = Product.builder().productId("005").productName("Tawan").image(imageBaseUrl+"tawan.jpg").price(20).Amount(1).description("tawan original").build();
         Product product6 = Product.builder().productId("006").productName("Coke").image(imageBaseUrl+"coke.jpg").price(20).Amount(1).description("sugar free coke").build();
 
         productDao.addProduct(product1);
