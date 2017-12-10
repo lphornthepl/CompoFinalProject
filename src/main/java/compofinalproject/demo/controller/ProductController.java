@@ -24,6 +24,7 @@ import java.util.List;
 
 @RestController
 public class ProductController {
+
     ProductService productService;
     @Autowired
     public void setProductService(ProductService productService) {
@@ -32,7 +33,6 @@ public class ProductController {
 
     @GetMapping("/product")
     public ResponseEntity<?> getProducts() {
-
         List<Product> students = productService.getProducts();
         return ResponseEntity.ok(students);
     }
@@ -49,7 +49,7 @@ public class ProductController {
     }
 
     @PostMapping("/product")
-    public ResponseEntity<?> uploadOnlyproduct(@RequestBody Product product){
+    public ResponseEntity<?> uploadOnlyProduct(@RequestBody Product product){
         productService.addProduct(product);
         return ResponseEntity.ok(product);
     }
@@ -80,11 +80,11 @@ public class ProductController {
         try{
             byte[] bytes = file.getBytes();
             String oldFilename = file.getOriginalFilename();
-            String ext = FilenameUtils.getExtension(oldFilename);
-            String newFilename = Integer.toString(LocalTime.now().hashCode(),16)+Integer.toString(oldFilename.hashCode(),16)+"."+ext;
-            Path path = Paths.get(imageServerDir+newFilename);
+//            String ext = FilenameUtils.getExtension(oldFilename);
+//            String newFilename = Integer.toString(LocalTime.now().hashCode(),16)+Integer.toString(oldFilename.hashCode(),16)+"."+ext;
+            Path path = Paths.get(imageServerDir+oldFilename);
             Files.write(path,bytes);
-            return ResponseEntity.ok(newFilename);
+            return ResponseEntity.ok(oldFilename);
         }catch (IOException e){
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

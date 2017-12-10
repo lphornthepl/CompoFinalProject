@@ -1,7 +1,9 @@
 import {Injectable} from "@angular/core";
 import {Product} from "../product/product";
 import 'rxjs/add/operator/map';
-import {Http,Response} from "@angular/http";
+import {Http, RequestOptions, Headers,Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
 export class ProductDataService {
@@ -48,6 +50,23 @@ export class ProductDataService {
 
   addToCart(product: Product) {
     this.productInCart.push(product);
+  }
+
+  addProduct(product: Product,file:any):Observable<Product> {
+    const formData = new FormData();
+    let fileName: string;
+    formData.append('file', file);
+    return this.http.post('http://localhost:8080/upload', formData)
+      .flatMap(filename => {
+        product.image = filename.text();
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions ({headers: headers, method: 'post'});
+        let body = JSON.stringify(product);
+        return this.http.post('http://localhost:8080/product', body, options)
+          .map(res => {
+            return res.json()
+          })
+      });
   }
 
 
