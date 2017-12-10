@@ -33,7 +33,7 @@ export class ProductDataService {
       });
   }
 
-<<<<<<< HEAD
+
   findProduct(search:string){
     let products: Product;
     let params: URLSearchParams = new URLSearchParams();
@@ -45,10 +45,10 @@ export class ProductDataService {
     return this.http.get('http://localhost:8080/products/',{search:params})
       .map(res => res.json());
   }
-=======
+
   addToCart(product: Product) {
     this.productInCart.push(product);
   }
 
->>>>>>> b26716bd08bb307a0ae1d0ed48ce63e7a7e97966
+
 }

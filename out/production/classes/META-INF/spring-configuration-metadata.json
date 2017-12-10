@@ -2,14 +2,14 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
-      "name": "server",
-      "type": "compofinalproject.demo.service.ShopkeeperServiceImpl"
-    },
-    {
       "sourceType": "compofinalproject.demo.config.DataLoader",
       "name": "server",
       "type": "compofinalproject.demo.config.DataLoader"
+    },
+    {
+      "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
+      "name": "server",
+      "type": "compofinalproject.demo.service.ShopkeeperServiceImpl"
     },
     {
       "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
