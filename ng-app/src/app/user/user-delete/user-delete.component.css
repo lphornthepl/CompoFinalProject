@@ -57,7 +57,7 @@ background-color: #000000;
 color : #696969;
 border-radius: 2px;
 object-fit: cover;
-width: 125px;
+width: 110px;
 height: 170px;
 
 
@@ -129,4 +129,7 @@ width:400px;
 .p1{
 font-size: 30px;
 margin-top:0px;
+}
+.container{
+left:0px;
 }

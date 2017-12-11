@@ -23,6 +23,7 @@ import {HttpModule} from "@angular/http";
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { LoginComponent } from './login/login.component';
     UserComponent,
     UserAddComponent,
     UserDeleteComponent,
-    LoginComponent
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpModule, FormsModule
