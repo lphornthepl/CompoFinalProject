@@ -21,14 +21,14 @@ public class ShopkeeperController {
         this.shopkeeperService = shopkeeperService;
     }
 
-    @GetMapping("/Shopkeeper")
+    @GetMapping("/shopkeeper")
     public ResponseEntity<?> getCustomers() {
 
         List<Shopkeeper> shopkeepers = shopkeeperService.getShopkeepers();
         return ResponseEntity.ok(shopkeepers);
     }
 
-    @PostMapping("/Shopkeeper")
+    @PostMapping("/shopkeeper")
     public ResponseEntity<?> uploadOnlyShopkeeper(@RequestBody Shopkeeper shopkeeper) {
         shopkeeperService.addShopkeeper(shopkeeper);
         return ResponseEntity.ok(shopkeeper);

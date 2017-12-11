@@ -44,7 +44,7 @@ export class ProductDataService {
       // 'Content-type': 'application/json',
       // 'Authorization': 'Bearer ' + this.authenticationService.getToken()
     });
-    return this.http.get('http://localhost:8080/products/',{search:params})
+    return this.http.get('http://localhost:8080/product/',{search:params})
       .map(res => res.json());
   }
 
@@ -66,7 +66,7 @@ export class ProductDataService {
           .map(res => {
             return res.json()
           })
-      });
+      })
   }
 
 

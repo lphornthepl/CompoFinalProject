@@ -26,8 +26,8 @@ export class ProductAddComponent implements OnInit {
     console.log(product)
     let inputEl: HTMLInputElement = this.inputEl.nativeElement;
     this.productDataService.addProduct(this.product, inputEl.files.item(0))
-      .subscribe(resultStudent => {
-        result = resultStudent
+      .subscribe(resultProduct => {
+        result = resultProduct
         if (result != null) {
           this.router.navigate(['/product']);
         } else {
