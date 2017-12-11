@@ -3,7 +3,7 @@
   <div class="container-fluid col-lg-12 navbar-relative-top">
     <ul class="nav navbar-nav" style="padding: 0%;">
       <li role="presentation" routerLinkActive="active"><a routerLink="/product">Product</a></li>
-      <li role="presentation" routerLinkActive="active"><a routerLink="/add_product">Add product</a></li>
+      <li role="presentation" *ngIf="hasRole('SHOPKEEPER')" routerLinkActive="active"><a routerLink="/add_product">Add product</a></li>
       <li role="presentation" routerLinkActive="active"><a routerLink="/edit_product">Edit product</a></li>
       <li role="presentation" routerLinkActive="active"><a routerLink="/delete_product">Delete product</a>
       </li>

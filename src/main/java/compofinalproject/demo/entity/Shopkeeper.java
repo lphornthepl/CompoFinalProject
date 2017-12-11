@@ -14,23 +14,22 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = false)
-@RequiredArgsConstructor
 @Builder
 public class Shopkeeper {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
-    @NonNull
+
     int ShopkeeperId;
-    @NonNull
+
     String ShopkeeperName;
-    @NonNull
+
     String ShopkeeperSurname;
-    @NonNull
+
     String username;
-    @NonNull
+
     String password;
-    @NonNull
+
     String moreInformation;
 }

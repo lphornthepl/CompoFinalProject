@@ -13,6 +13,8 @@ export class ProductListComponent implements OnInit {
   constructor(private productDataService: ProductDataService, private router: Router) {
   }
 
+
+
   products: Product[];
 
 
@@ -40,7 +42,7 @@ export class ProductListComponent implements OnInit {
   onSearch() {
     this.productDataService.findProduct(this.search).subscribe(products => this.products = products, (error) => {
       if (error.status === 401) {
-        this.router.navigate(['prosuct'], {queryParams: {source: 'product'}})
+        this.router.navigate(['product'], {queryParams: {source: 'product'}})
       }
     })
   }

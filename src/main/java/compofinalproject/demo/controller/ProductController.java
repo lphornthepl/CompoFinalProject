@@ -32,12 +32,14 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @CrossOrigin
     @GetMapping("/product")
     public ResponseEntity<?> getProducts() {
         List<Product> students = productService.getProducts();
         return ResponseEntity.ok(students);
     }
 
+    @CrossOrigin
     @GetMapping("product/{id}")
     public ResponseEntity getStudent(@PathVariable("id")long id){
         Product product = productService.findById(id);

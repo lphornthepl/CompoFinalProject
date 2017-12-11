@@ -11,10 +11,8 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
-
 @Profile("ProductDataSource")
 public class ProductDaoImpl implements ProductDao {
-
 
     ProductRepository productRepository;
     @Autowired

@@ -22,6 +22,7 @@ import {ProductDataService} from "./service/product-data-service";
 import {HttpModule} from "@angular/http";
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import {AuthenticationService} from './service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule, AppRoutingModule, HttpModule, FormsModule
   ],
-  providers: [ProductDataService],
+  providers: [ProductDataService,AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

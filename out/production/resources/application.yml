@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: ProductDataSource,inMemoryDB
+    active: ProductDataSource,inMemoryDB,DBDataSource
   http:
     multipart:
       max-file-size: 10MB
@@ -9,6 +9,15 @@ server:
   baseUrl: http://localhost:8080/
   imageUrl: images/
   imageServerDir : C:/images/lab07/
+---
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
 ---
 spring:
   profiles: inMemoryDB

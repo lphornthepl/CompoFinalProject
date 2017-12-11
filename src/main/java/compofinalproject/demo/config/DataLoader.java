@@ -4,9 +4,16 @@ package compofinalproject.demo.config;
 import compofinalproject.demo.dao.CustomerDao;
 import compofinalproject.demo.dao.ProductDao;
 import compofinalproject.demo.dao.ShopkeeperDao;
+import compofinalproject.demo.dao.VisitorDao;
 import compofinalproject.demo.entity.Customer;
 import compofinalproject.demo.entity.Product;
 import compofinalproject.demo.entity.Shopkeeper;
+import compofinalproject.demo.entity.Visitor;
+import compofinalproject.demo.entity.security.Authority;
+import compofinalproject.demo.entity.security.AuthorityName;
+import compofinalproject.demo.entity.security.User;
+import compofinalproject.demo.security.repository.AuthorityRepository;
+import compofinalproject.demo.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -14,28 +21,53 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Date;
 
 @ConfigurationProperties(prefix = "server")
 @Component
 public class DataLoader  implements ApplicationRunner {
+    VisitorDao visitorDao;
+
 
     @Autowired
-    ProductDao productDao;
+    public void setVisitorDao(VisitorDao visitorDao) {
+        this.visitorDao = visitorDao;
+        User user1,user2,user3;
+
+    }
+
+    @Autowired
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    UserRepository userRepository;
+
+    @Autowired
+    public void setAuthorityRepository(AuthorityRepository authorityRepository) {
+        this.authorityRepository = authorityRepository;
+    }
+
+    AuthorityRepository authorityRepository;
 
     @Autowired
     public void setProductDao(ProductDao productDao) {
         this.productDao = productDao;
     }
-
-    @Autowired
-    CustomerDao customerDao;
+    ProductDao productDao;
 
     @Autowired
     public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
     }
 
-    @Autowired
+    CustomerDao customerDao;
+    User user1,user2,user3;
+
+
     ShopkeeperDao shopkeeperDao;
 
     @Autowired
@@ -93,6 +125,78 @@ public class DataLoader  implements ApplicationRunner {
 
         shopkeeperDao.addShopkeeper(shopkeeper1);
         shopkeeperDao.addShopkeeper(shopkeeper2);
+
+        Visitor visitor1 = Visitor.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
+                .gpa(2.15).image(imageBaseUrl + "mitsuha.gif").feature(true)
+                .penAmount(0).description("The most beloved one").build();
+        Visitor visitor2 = Visitor.builder().studentId("SE-002").name("Prayuth").surname("The minister")
+                .gpa(3.59).image(imageBaseUrl + "tu.jpg").feature(false)
+                .penAmount(15).description("The great man ever!!!!").build();
+        Visitor visitor3 = Visitor.builder().studentId("SE-003").name("Jurgen").surname("Kloop")
+                .gpa(2.15).image(imageBaseUrl + "Kloop.gif").feature(true)
+                .penAmount(2).description("The man for the Kop").build();
+
+        visitorDao.addVisitor(visitor1);
+        visitorDao.addVisitor(visitor2);
+        visitorDao.addVisitor(visitor3);
+
+        securitySetup();
+
+        visitor1.setUser(user1);
+        user1.setVisitor(visitor1);
+        visitor2.setUser(user2);
+        user2.setVisitor(visitor2);
+        visitor3.setUser(user3);
+        user3.setVisitor(visitor3);
+    }
+
+
+
+    private void securitySetup() {
+        Authority auth1 = Authority.builder().name(AuthorityName.ROLE_CUSTOMER).build();
+        Authority auth2 = Authority.builder().name(AuthorityName.ROLE_SHOPKEEPER).build();
+        Authority auth3 = Authority.builder().name(AuthorityName.ROLE_ADMIN).build();
+        authorityRepository.save(auth1);
+        authorityRepository.save(auth2);
+        authorityRepository.save(auth3);
+        user1 = User.builder()
+                .username("admin")
+                .password("admin")
+                .firstname("admin")
+                .lastname("admin")
+                .email("admin@admin.com")
+                .enabled(true)
+                .lastPasswordResetDate(Date.from(LocalDate.of(2016,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .build();
+
+        user2 = User.builder()
+                .username("shopkeeper")
+                .password("shopkeeper")
+                .firstname("user")
+                .lastname("user")
+                .email("enabled@user.com")
+                .enabled(true)
+                .lastPasswordResetDate(Date.from(LocalDate.of(2016,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .build();
+        user3 = User.builder()
+                .username("customer")
+                .password("customer")
+                .firstname("user")
+                .lastname("user")
+                .email("disabled@user.com")
+                .enabled(true)
+                .lastPasswordResetDate(Date.from(LocalDate.of(2016,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
+                .build();
+        user1.setAuthorities(new ArrayList<>());
+        user1.getAuthorities().add(auth3);
+        user2.setAuthorities(new ArrayList<>());
+        user2.getAuthorities().add(auth2);
+        user3.setAuthorities(new ArrayList<>());
+        user3.getAuthorities().add(auth1);
+        userRepository .save(user1);
+        userRepository .save(user2);
+        userRepository .save(user3);
+
 
     }
 }
