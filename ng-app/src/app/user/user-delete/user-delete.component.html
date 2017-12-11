@@ -1,3 +1,72 @@
-<p>
-  user-delete works!
-</p>
+
+<div class="row panel-body">
+  <div class="col-md-6 col-sm-6 col-lg-8  col-lg-offset-1 ">
+    <div class="panel col-lg-5" >
+
+
+      <p class="p1">Shopkeeper Customer</p>
+
+      </div>
+
+      <div class="panel col-lg-7" >
+        <div class="input-group">
+
+      <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search" >
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" (click)="onSearch()">Go!</button>
+      </span>
+
+        </div>
+
+        </div>
+    </div>
+  </div>
+
+
+
+
+<div class="row col-lg-12 ">
+  <div *ngFor="let product of products" class="panel col-lg-5 col-sm-5 col-lg-offset-1" style="border-width: 3px; border-color:#000000;">
+    <!--<div class="col-lg-1">-->
+    <!--&lt;!&ndash;blank&ndash;&gt;-->
+    <!--</div>-->
+
+
+    <div class="panel col-lg-9" >
+      <div class="page-header">
+        <p class="panel-title">Name:{{product.productName}}</p>
+      </div>
+
+        <div >
+          <div class="dropdown">
+
+
+            <!--<div class="dropdown-content">-->
+            <!--<img class="img-responsive1"  [src]="product.image" [title] = "product.productName" >-->
+
+
+            <!--</div>-->
+            <div class="desMargin" >
+
+              <p class="description">ID: {{product.price}}</p>
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+        <div class="col-lg-1" style="top=opx; button=0px;">
+
+        <button  class="button button1" (click)="addToCart(product)"><p class="a">Delete</p></button>
+
+      </div>
+
+
+
+
+
+  </div>
+  </div>
+
+
+

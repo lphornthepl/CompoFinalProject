@@ -1,4 +1,4 @@
-    ::-webkit-scrollbar {
+    html::-webkit-scrollbar {
     display: none;
     }
 		div.back{
@@ -35,6 +35,7 @@
 
 		img {
 			max-width:100%;
+
 			border:none;
 
 
@@ -171,6 +172,24 @@
 
 
 		}
+		.col-md-auto{
+
+
+		}
+		#video-background{
+		max-width:100%;
+    border:none;
+    object-fit: cover;
+    height: 800px;
+		}
+		.panel{
+		width:1600px;
+		margin-right:0px;
+		top:0px;
+		margin-button:0px;
+		position : relative;
+		}
+
 
 
 

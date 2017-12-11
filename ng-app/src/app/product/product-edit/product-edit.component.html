@@ -1,17 +1,12 @@
-
-<script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Hello World";
-}
-</script>
-<div class="row col-lg-12 center-pill">
-  <div *ngFor="let product of products" class="col-lg-4">
+<div class="container">
+<div class="row col-lg-12 center-pill" >
+  <div *ngFor="let product of products" class="col-lg-3">
     <!--<div class="col-lg-1">-->
     <!--&lt;!&ndash;blank&ndash;&gt;-->
     <!--</div>-->
 
 
-    <div class="panel   col-lg-12"  style="border-width: 3px; border-color:#000000;">
+    <div class="panel   col-lg-12"  style="border-width: 3px; border-color:#000000; height: 350px;">
       <div class="page-header">
         <p class="panel-title">{{product.productName}}</p>
         <div class="buttonEdit">
@@ -21,8 +16,17 @@ function myFunction() {
       </div>
       <div class="panel-body">
         <div>
-          <div>
+          <div class="dropdown">
             <img class="img-responsive"  [src]="product.image" [title] = "product.productName">
+            <div class="dropdown-content">
+            <img class="img-responsive1"  [src]="product.image" [title] = "product.productName"  >
+              <div class="textDes">
+              <p >{{product.description}}</p>
+              <p>Price: {{product.price}}</p>
+              </div>
+
+
+            </div>
 
           </div>
           <div>
@@ -34,6 +38,7 @@ function myFunction() {
       </div>
     </div>
   </div>
+</div>
 </div>
 
 

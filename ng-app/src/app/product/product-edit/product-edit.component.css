@@ -46,7 +46,7 @@ background-color: #000000;
 color : #696969;
 border-radius: 2px;
 
-border: 2px solid #696969;
+border: 2px solid #000000;
 
 
 }
@@ -54,3 +54,33 @@ border: 2px solid #696969;
     background-color: #FFFFFF;
     color: 696969;
     }
+.container{
+top:20px;
+position : relative;
+}
+.dropdown-content {
+border : solid;
+    border-color: #ffffff;
+    border-size:10px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 16px 16px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+
+}
+.textDes{
+font-size:30px;
+text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.img-responsive1{
+
+height : 300px;
+ width: fit;
+}

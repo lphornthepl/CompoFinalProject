@@ -40,8 +40,8 @@ border: 2px solid #696969;
 .bunAdd {
    background-color: black; /* Green */
        border: solid;
-       border-color:#696969;
-       border-size: 2px;
+       border-color:#000000;
+       border-size: 1px;
        border-radius: 3px;
 
        color: #696969;
@@ -55,4 +55,8 @@ border: 2px solid #696969;
        transition-duration: 0.4s;
        cursor: pointer;
 
+}
+.container{
+position : relative;
+top:20px;
 }
