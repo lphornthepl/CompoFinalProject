@@ -1,9 +1,10 @@
+<div class="container">
 <div class="row col-lg-12 center-pill">
   <div *ngFor="let product of cartList let i = index" [attr.data-index]="i" class="col-lg-4">
     <!--<div class="col-lg-1">-->
     <!--&lt;!&ndash;blank&ndash;&gt;-->
     <!--</div>-->
-    <div class="panel panel-primary col-lg-12">
+    <div class="panel panel-primary col-lg-12" style="border-width: 3px; border-color:#000000;">
       <div class="page-header">
         <h2 class="panel-title">{{cartList[i].productName}}</h2>
       </div>
@@ -19,15 +20,15 @@
         </div>
         <div class="row">
           <div class="center col-sm-12 ">
-            <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="downQuantity(product)">-</button>
+            <button type="button" class="buttun1 btn btn-primary btn-xs col-md-4" (click)="downQuantity(product)" style="width: 20px;">-</button>
             <input type="text" style="text-align: center;" class="col-md-4" [(ngModel)]="cartList[i].amount"/>
-            <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="upQuantity(product)">+</button>
+            <button type="button" class="buttun1 btn btn-primary btn-xs col-md-4" (click)="upQuantity(product)" style="width: 20px;">+</button>
           </div>
         </div>
-        <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="showDetail(product)">Detail</button>
-        <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="removeFromCart(product)">Remove</button>
+        <button type="button" class="buttun1 btn btn-primary btn-xs col-md-4" (click)="showDetail(product)" style="width: 65px;">Detail</button>
+        <button type="button" class="buttun1 btn btn-primary btn-xs col-md-4" (click)="removeFromCart(product)" style="width: 65px;">Remove</button>
       </div>
     </div>
   </div>
 </div>
-
+</div>

@@ -52,6 +52,7 @@ export class ProductDataService {
       'Contenet-type': 'application/json'
       ,'Authorization': 'Bearer'+this.authenticationService.getToken()
     });
+
     return this.http.get('http://localhost:8080/products/',{headers: headers, search:params})
       .map(res => res.json());
   }

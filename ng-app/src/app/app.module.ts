@@ -24,6 +24,7 @@ import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {AuthenticationService} from './service/authentication.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import {AuthenticationService} from './service/authentication.service';
     UserComponent,
     UserAddComponent,
     UserDeleteComponent,
-    LoginComponent
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpModule, FormsModule

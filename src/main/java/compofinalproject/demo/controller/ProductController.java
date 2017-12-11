@@ -51,20 +51,11 @@ public class ProductController {
 
     }
 
-
-
-
-
    @PostMapping("/product")
     public ResponseEntity<?> uploadOnlyProduct(@RequestBody Product product){
         productService.addProduct(product);
         return ResponseEntity.ok(product);
     }
-
-
-
-
-
 
     @Value("${server.imageServerDir}")
     String imageServerDir;
