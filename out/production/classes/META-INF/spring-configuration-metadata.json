@@ -7,14 +7,14 @@
       "type": "compofinalproject.demo.config.DataLoader"
     },
     {
-      "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
-      "name": "server",
-      "type": "compofinalproject.demo.service.ShopkeeperServiceImpl"
-    },
-    {
       "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
       "name": "server",
       "type": "compofinalproject.demo.service.CustomerServiceImpl"
+    },
+    {
+      "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
+      "name": "server",
+      "type": "compofinalproject.demo.service.ShopkeeperServiceImpl"
     }
   ],
   "properties": [
