@@ -73,26 +73,30 @@
 
 
 
-		div.button {
-			border-radius: 1px;
+		div.btn-primarybtn {
+
 		    margin-left: 20px;
 		    margin-top: 5px;
+		    text-align: center;
+
 
 
 
 		}
-		.button1{
-			background-color: #696969; /* Green */
+		.btn-primarybtn{
+			background-color: #ffffff; /* Green */
 	    	border: none;
 
-	    	width: 255px;
+	    	width: 370px;
+	    	height: 30px;
+        border-radius: 3px;
 
-
-    		color: #FFFFFF;
-    		border: 2px solid #696969;
+    		color: #696969;
+    		border: 2px solid #ffffff;
     		box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24),0 5px 5px 0 rgba(0,0,0,0.19);
-    		opacity: 1.0;
+    		opacity: 0.9;
    			filter: alpha(opacity=40);
+
 
 		}
 		.button2{
@@ -187,9 +191,29 @@
 		margin-right:0px;
 		top:0px;
 		margin-button:0px;
-		position : relative;
+		position : sticky;
 		}
+		.h2login{
+		text-align: center;
+		color:#ffffff;
+		}
+  input#username{
+  opacity: 0.6;
+     			filter: alpha(opacity=40);
 
+  }
+  input#password{
+    opacity: 0.6;
+       			filter: alpha(opacity=40);
+
+
+
+
+    }
+    .btn-primarybtn:hover {
+        background-color: #000000;
+        color: #ffffff;
+        }
 
 
 
