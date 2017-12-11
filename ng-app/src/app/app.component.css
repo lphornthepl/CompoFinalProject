@@ -1,9 +1,9 @@
 h1 { margin-left: 20px;}
 
-.col-lg-7 col align-self-center{
-padding: 0%;
-position:static;
-
+.col-lg-7 col align-self-center {
+  padding: 0%;
+  position: static;
+}
 
 .top{
   top: 0px;
