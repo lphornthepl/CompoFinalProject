@@ -2,9 +2,9 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "compofinalproject.demo.config.DataLoader",
+      "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
       "name": "server",
-      "type": "compofinalproject.demo.config.DataLoader"
+      "type": "compofinalproject.demo.service.CustomerServiceImpl"
     },
     {
       "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
@@ -12,9 +12,9 @@
       "type": "compofinalproject.demo.service.ShopkeeperServiceImpl"
     },
     {
-      "sourceType": "compofinalproject.demo.service.CustomerServiceImpl",
+      "sourceType": "compofinalproject.demo.config.DataLoader",
       "name": "server",
-      "type": "compofinalproject.demo.service.CustomerServiceImpl"
+      "type": "compofinalproject.demo.config.DataLoader"
     }
   ],
   "properties": [
