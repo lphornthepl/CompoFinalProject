@@ -91,7 +91,7 @@ public class ProductController {
         }
     };
 
-    @GetMapping("products")
+    @GetMapping("/products")
     public ResponseEntity<?> queryProduct(@RequestParam("search") String query) {
         List<Product> products = productService.queryProduct(query);
         if (products != null)
@@ -101,4 +101,5 @@ public class ProductController {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 
     }
+
 }

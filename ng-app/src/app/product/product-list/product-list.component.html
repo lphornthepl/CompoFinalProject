@@ -1,4 +1,15 @@
-<div class="row col-lg-12 center-pill">
+<div class="row panel-body">
+  <div class="col-md-6 col-sm-6 col-lg-6  col-lg-offset-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" (click)="onSearch()">Go!</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row col-lg-12 ">
 <div *ngFor="let product of products" class="col-lg-4">
   <!--<div class="col-lg-1">-->
     <!--&lt;!&ndash;blank&ndash;&gt;-->

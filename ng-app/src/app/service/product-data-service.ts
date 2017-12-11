@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Product} from "../product/product";
 import 'rxjs/add/operator/map';
-import {Http,Response} from "@angular/http";
+import {Http,Response,Headers,URLSearchParams} from "@angular/http";
 
 @Injectable()
 export class ProductDataService {
@@ -33,21 +33,20 @@ export class ProductDataService {
       });
   }
 
+  addToCart(product: Product) {
+    this.productInCart.push(product);
+  }
 
-  findProduct(search:string){
-    let products: Product;
+
+  findProduct(search: string){
+    let product: Product;
     let params: URLSearchParams = new URLSearchParams();
     params.set('search',search);
     let headers = new Headers({
-      // 'Content-type': 'application/json',
-      // 'Authorization': 'Bearer ' + this.authenticationService.getToken()
+      'Contenet-type': 'application/json'
+      // ,'Authorization': 'Bearer'+this.authenticationService.getToken()
     });
-    return this.http.get('http://localhost:8080/products/',{search:params})
-      .map(res => res.json());
-  }
-
-  addToCart(product: Product) {
-    this.productInCart.push(product);
+    return this.http.get('http://localhost:8080/products/',{headers:headers,search: params}).map(res => res.json());
   }
 
 

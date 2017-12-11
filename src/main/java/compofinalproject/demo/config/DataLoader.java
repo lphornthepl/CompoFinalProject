@@ -55,8 +55,9 @@ public class DataLoader  implements ApplicationRunner {
         this.imageUrl = imageUrl;
     }
 
-    @Transactional
+
     @Override
+    @Transactional
     public void run(ApplicationArguments args) throws Exception {
         imageBaseUrl = baseUrl + imageUrl;
         Product product1 = Product.builder().productId("001").productName("Mama").image(imageBaseUrl+"mama.jpg").price(15).Amount(1).description("mama").build();
