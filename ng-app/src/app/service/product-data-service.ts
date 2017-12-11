@@ -1,9 +1,10 @@
 import {Injectable} from "@angular/core";
 import {Product} from "../product/product";
 import 'rxjs/add/operator/map';
-import {Http, RequestOptions, Headers,Response} from '@angular/http';
+import {Http,Response,Headers,URLSearchParams, RequestOptions } from "@angular/http";
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
+
 
 @Injectable()
 export class ProductDataService {
@@ -36,20 +37,22 @@ export class ProductDataService {
   }
 
 
-  findProduct(search:string){
-    let products: Product;
+
+  findProduct(search: string){
+    let product: Product;
     let params: URLSearchParams = new URLSearchParams();
     params.set('search',search);
     let headers = new Headers({
-      // 'Content-type': 'application/json',
-      // 'Authorization': 'Bearer ' + this.authenticationService.getToken()
+      'Contenet-type': 'application/json'
+      // ,'Authorization': 'Bearer'+this.authenticationService.getToken()
     });
-    return this.http.get('http://localhost:8080/products/',{search:params})
+    return this.http.get('http://localhost:8080/product/',{search:params})
       .map(res => res.json());
   }
 
   addToCart(product: Product) {
     this.productInCart.push(product);
+
   }
 
   addProduct(product: Product,file:any):Observable<Product> {
@@ -66,7 +69,7 @@ export class ProductDataService {
           .map(res => {
             return res.json()
           })
-      });
+      })
   }
 
 

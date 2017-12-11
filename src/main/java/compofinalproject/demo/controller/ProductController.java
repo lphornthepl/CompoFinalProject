@@ -23,6 +23,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200",allowedHeaders = "*")
 public class ProductController {
 
     ProductService productService;
@@ -80,8 +81,8 @@ public class ProductController {
         try{
             byte[] bytes = file.getBytes();
             String oldFilename = file.getOriginalFilename();
-//            String ext = FilenameUtils.getExtension(oldFilename);
-//            String newFilename = Integer.toString(LocalTime.now().hashCode(),16)+Integer.toString(oldFilename.hashCode(),16)+"."+ext;
+            //String ext = FilenameUtils.getExtension(oldFilename);
+            ///String newFilename = Integer.toString(LocalTime.now().hashCode(),16)+Integer.toString(oldFilename.hashCode(),16)+"."+ext;
             Path path = Paths.get(imageServerDir+oldFilename);
             Files.write(path,bytes);
             return ResponseEntity.ok(oldFilename);
@@ -91,7 +92,7 @@ public class ProductController {
         }
     };
 
-    @GetMapping("products")
+    @GetMapping("/products")
     public ResponseEntity<?> queryProduct(@RequestParam("search") String query) {
         List<Product> products = productService.queryProduct(query);
         if (products != null)
@@ -101,4 +102,5 @@ public class ProductController {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 
     }
+
 }
