@@ -75,6 +75,28 @@ display: none;
 
 
 
+.affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+  .container-fluid{
+   top:100px;
+   position:relative;
+
+  }
+
+
+
+
 
 
 
