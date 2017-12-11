@@ -49,11 +49,20 @@ public class ProductController {
 
     }
 
-    @PostMapping("/product")
+
+
+
+
+   @PostMapping("/product")
     public ResponseEntity<?> uploadOnlyProduct(@RequestBody Product product){
         productService.addProduct(product);
         return ResponseEntity.ok(product);
     }
+
+
+
+
+
 
     @Value("${server.imageServerDir}")
     String imageServerDir;
@@ -72,7 +81,10 @@ public class ProductController {
         }
 
     }
-
+    @Value("${server.baseUrl}")
+    String baseUrl;
+    @Value("${server.imageUrl}")
+    String imageUrl;
     @PostMapping("/upload")
     public ResponseEntity<?> uploadImage(@RequestParam("file")MultipartFile file){
         if (file.isEmpty()){
@@ -85,7 +97,7 @@ public class ProductController {
             ///String newFilename = Integer.toString(LocalTime.now().hashCode(),16)+Integer.toString(oldFilename.hashCode(),16)+"."+ext;
             Path path = Paths.get(imageServerDir+oldFilename);
             Files.write(path,bytes);
-            return ResponseEntity.ok(oldFilename);
+            return ResponseEntity.ok(baseUrl+ imageUrl+oldFilename);
         }catch (IOException e){
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

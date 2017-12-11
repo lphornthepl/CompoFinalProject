@@ -13,7 +13,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = false)
-@RequiredArgsConstructor
 @Builder
 public class Product {
 
@@ -21,17 +20,11 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
-    @NonNull
     String productId;
-    @NonNull
     String productName;
-    @NonNull
     String image;
-    @NonNull
-    double price;
-    @NonNull
-    int Amount;
-    @NonNull
+    int price;
+    int amount;
     String description;
 
 }

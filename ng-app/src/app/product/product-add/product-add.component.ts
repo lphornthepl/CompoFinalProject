@@ -20,12 +20,11 @@ export class ProductAddComponent implements OnInit {
 
 
   @ViewChild('fileInput') inputEl: ElementRef;
-
   addProduct(product: Product) {
     let result: Product;
     console.log(product)
     let inputEl: HTMLInputElement = this.inputEl.nativeElement;
-    this.productDataService.addProduct(this.product, inputEl.files.item(0))
+    this.productDataService.addProduct(product, inputEl.files.item(0))
       .subscribe(resultProduct => {
         result = resultProduct
         if (result != null) {
@@ -37,10 +36,10 @@ export class ProductAddComponent implements OnInit {
   }
 
 
-  onFileChange(event, student: any) {
+  onFileChange(event, product: any) {
     var filename = event.target.files[0].name;
     console.log(filename);
-    student.image = filename;
+    this.product.image = filename;
   }
 
 }

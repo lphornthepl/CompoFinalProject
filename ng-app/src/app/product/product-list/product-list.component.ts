@@ -31,16 +31,6 @@ export class ProductListComponent implements OnInit {
 
 
   addToCart(product: Product) {
-    // var same = false;
-    // for(var i=0;i++;i<this.productDataService.productInCart.length) {
-    //   var string1 = this.productDataService.productInCart[i].productId;
-    //   var string2 = product.productId;
-    //   if (string1 == string2) {
-    //     same = true ;
-    //   }
-    // }
-    // if(same == false){
-
       this.productDataService.getProductIncart().push(product);
     //}
   }
