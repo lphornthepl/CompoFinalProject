@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface ProductDao {
     List<Product> getProducts();
+    List<Product> getProductsSearch(String searchText);
     Product findById(long id);
     Product addProduct(Product product);
-    List<Product> findProduct(String searchName);
+    Product findByName(String searchName);
 }

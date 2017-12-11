@@ -1,9 +1,10 @@
 import {Injectable} from "@angular/core";
 import {Product} from "../product/product";
 import 'rxjs/add/operator/map';
-import {Http, RequestOptions, Headers,Response} from '@angular/http';
+import {Http,Response,Headers,URLSearchParams, RequestOptions } from "@angular/http";
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
+
 
 @Injectable()
 export class ProductDataService {
@@ -35,21 +36,29 @@ export class ProductDataService {
       });
   }
 
+  addToCart(product: Product) {
+    this.productInCart.push(product);
+  }
 
-  findProduct(search:string){
-    let products: Product;
+
+  findProduct(search: string){
+    let product: Product;
     let params: URLSearchParams = new URLSearchParams();
     params.set('search',search);
     let headers = new Headers({
-      // 'Content-type': 'application/json',
-      // 'Authorization': 'Bearer ' + this.authenticationService.getToken()
+      'Contenet-type': 'application/json'
+      // ,'Authorization': 'Bearer'+this.authenticationService.getToken()
     });
+<<<<<<< HEAD
     return this.http.get('http://localhost:8080/product/',{search:params})
       .map(res => res.json());
   }
 
   addToCart(product: Product) {
     this.productInCart.push(product);
+=======
+    return this.http.get('http://localhost:8080/products/',{headers:headers,search: params}).map(res => res.json());
+>>>>>>> 4b31a7b0436e4e11ae1eb6e2eeb99644a743769f
   }
 
   addProduct(product: Product,file:any):Observable<Product> {

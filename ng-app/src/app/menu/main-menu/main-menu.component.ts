@@ -17,16 +17,16 @@ export class MainMenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  search: string;
-  onSearch(){
-    this.productDataService.findProduct(this.search)
-      .subscribe(
-        products => this.products = products,
-        (error) => {
-          if (error.status === 401){
-            // this.router.navigate(['login'],{queryParams:{source:'student'}});
-          }
-        })
-  }
+  // search: string;
+  // onSearch(){
+  //   this.productDataService.findProduct(this.search)
+  //     .subscribe(
+  //       products => this.products = products,
+  //       (error) => {
+  //         if (error.status === 401){
+  //           // this.router.navigate(['login'],{queryParams:{source:'student'}});
+  //         }
+  //       })
+  // }
 
 }

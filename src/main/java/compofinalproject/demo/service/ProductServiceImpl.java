@@ -2,7 +2,6 @@ package compofinalproject.demo.service;
 
 import compofinalproject.demo.dao.ProductDao;
 import compofinalproject.demo.entity.Product;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,13 +49,22 @@ public class ProductServiceImpl implements ProductService {
         return productDao.addProduct(product);
     }
 
-    @Override
     @Transactional
+    @Override
+    public Product getProductForTransfer(String searchName) {
+        Product product = productDao.findByName(searchName);
+//        Hibernate.initialize(product.getAuthrities());
+        return product;
+    }
+
+    @Override
     public List<Product> queryProduct(String query) {
-        if (query == null || query.equals("")){
+        if (query == null || query.equals("")) {
             return productDao.getProducts();
         }
-        return productDao.findProduct(query);
+        return productDao.getProductsSearch(query);
     }
+
+
 
 }
