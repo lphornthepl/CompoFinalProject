@@ -16,16 +16,14 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("/Customer")
+    @GetMapping("/customer")
     public ResponseEntity<?> getCustomers() {
 
         List<Customer> customers = customerService.getCustomers();
         return ResponseEntity.ok(customers);
     }
 
-
-
-    @PostMapping("/Customer")
+    @PostMapping("/customer")
     public ResponseEntity<?> uploadOnlyCustomer(@RequestBody Customer customer) {
         customerService.addCustomer(customer);
         return ResponseEntity.ok(customer);

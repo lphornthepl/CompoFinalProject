@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ProductDataService} from "../../service/product-data-service";
 import {Product} from "../product";
@@ -9,8 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-
- constructor(private productDataService: ProductDataService,private router: Router) { }
+  constructor(private productDataService: ProductDataService,private router: Router) { }
   products: Product[];
 
 
@@ -24,6 +24,9 @@ export class ProductEditComponent implements OnInit {
     this.router.navigate(['/detail',product.productId]);
 
     }
+
+
+
 
 
 

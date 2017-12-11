@@ -1,5 +1,9 @@
 
-
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
 <div class="row col-lg-12 center-pill">
   <div *ngFor="let product of products" class="col-lg-4">
     <!--<div class="col-lg-1">-->
@@ -11,7 +15,7 @@
       <div class="page-header">
         <p class="panel-title">{{product.productName}}</p>
         <div class="buttonEdit">
-        <button  class="button button1" (click)="addToCart(product) " onclick="myFunction()"><p class="a">Edit</p></button>
+        <button  class="button button1" onclick="myFunction()"  ><p class="a">Edit</p></button>
 
         </div>
       </div>

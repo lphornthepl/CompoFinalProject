@@ -36,9 +36,6 @@ export class ProductDataService {
       });
   }
 
-  addToCart(product: Product) {
-    this.productInCart.push(product);
-  }
 
 
   findProduct(search: string){
@@ -49,7 +46,13 @@ export class ProductDataService {
       'Contenet-type': 'application/json'
       // ,'Authorization': 'Bearer'+this.authenticationService.getToken()
     });
-    return this.http.get('http://localhost:8080/products/',{headers:headers,search: params}).map(res => res.json());
+    return this.http.get('http://localhost:8080/product/',{search:params})
+      .map(res => res.json());
+  }
+
+  addToCart(product: Product) {
+    this.productInCart.push(product);
+
   }
 
   addProduct(product: Product,file:any):Observable<Product> {
@@ -66,7 +69,7 @@ export class ProductDataService {
           .map(res => {
             return res.json()
           })
-      });
+      })
   }
 
 

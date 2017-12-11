@@ -17,23 +17,28 @@
   <!--</div>-->
 
 
-  <div class="panel   col-lg-12"  style="border-width: 3px; border-color:#000000;">
+  <div class="panel col-lg-12"  style="border-width: 3px; border-color:#000000;">
     <div class="page-header">
       <p class="panel-title">{{product.productName}}</p>
     </div>
     <div class="panel-body">
       <div>
-        <div>
-        <img class="img-responsive"  [src]="product.image" [title] = "product.productName">
+        <div class="dropdown">
 
-        </div>
-        <div>
+        <img class="img-responsive"  [src]="product.image" [title] = "product.productName" >
+          <!--<div class="dropdown-content">-->
+            <!--<img class="img-responsive1"  [src]="product.image" [title] = "product.productName" >-->
+
+
+          <!--</div>-->
+        <div >
         <p>description: {{product.description}}</p>
-        <p>Price: {{product.price}}</p>
+        <p class="description">Price: {{product.price}}</p>
         </div>
       </div>
       <button  class="button button1" (click)="addToCart(product)"><p class="a">Add</p></button>
       <button  class="button button1" (click)="showDetail(product)"><p class="a">Detail</p></button>
+
     </div>
   </div>
 </div>
