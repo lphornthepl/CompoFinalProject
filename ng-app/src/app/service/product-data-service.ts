@@ -36,9 +36,6 @@ export class ProductDataService {
       });
   }
 
-  addToCart(product: Product) {
-    this.productInCart.push(product);
-  }
 
 
   findProduct(search: string){
@@ -49,16 +46,13 @@ export class ProductDataService {
       'Contenet-type': 'application/json'
       // ,'Authorization': 'Bearer'+this.authenticationService.getToken()
     });
-<<<<<<< HEAD
     return this.http.get('http://localhost:8080/product/',{search:params})
       .map(res => res.json());
   }
 
   addToCart(product: Product) {
     this.productInCart.push(product);
-=======
-    return this.http.get('http://localhost:8080/products/',{headers:headers,search: params}).map(res => res.json());
->>>>>>> 4b31a7b0436e4e11ae1eb6e2eeb99644a743769f
+
   }
 
   addProduct(product: Product,file:any):Observable<Product> {
