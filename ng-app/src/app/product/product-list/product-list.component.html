@@ -1,3 +1,4 @@
+
 <div class="row panel-body">
   <div class="col-md-6 col-sm-6 col-lg-6  col-lg-offset-3">
     <div class="input-group">
@@ -14,24 +15,28 @@
   <!--<div class="col-lg-1">-->
     <!--&lt;!&ndash;blank&ndash;&gt;-->
   <!--</div>-->
-  <div class="panel panel-primary col-lg-12">
+
+
+  <div class="panel   col-lg-12"  style="border-width: 3px; border-color:#000000;">
     <div class="page-header">
-      <h2 class="panel-title">{{product.productName}}</h2>
+      <p class="panel-title">{{product.productName}}</p>
     </div>
     <div class="panel-body">
       <div>
         <div>
-        <img class="img-responsive" [src]="product.image" [title] = "product.productName">
+        <img class="img-responsive"  [src]="product.image" [title] = "product.productName">
+
         </div>
         <div>
         <p>description: {{product.description}}</p>
         <p>Price: {{product.price}}</p>
         </div>
       </div>
-      <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="addToCart(product)">Add</button>
-      <button type="button" class="btn btn-primary btn-xs col-md-4" (click)="showDetail(product)">Detail</button>
+      <button  class="button button1" (click)="addToCart(product)"><p class="a">Add</p></button>
+      <button  class="button button1" (click)="showDetail(product)"><p class="a">Detail</p></button>
     </div>
   </div>
 </div>
 </div>
+
 

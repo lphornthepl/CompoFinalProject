@@ -29,6 +29,7 @@ export class ProductListComponent implements OnInit {
   }
 
 
+
   addToCart(product: Product) {
     // var same = false;
     // for(var i=0;i++;i<this.productDataService.productInCart.length) {

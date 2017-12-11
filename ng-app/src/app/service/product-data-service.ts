@@ -1,7 +1,10 @@
 import {Injectable} from "@angular/core";
 import {Product} from "../product/product";
 import 'rxjs/add/operator/map';
-import {Http,Response,Headers,URLSearchParams} from "@angular/http";
+import {Http,Response,Headers,URLSearchParams, RequestOptions } from "@angular/http";
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/mergeMap';
+
 
 @Injectable()
 export class ProductDataService {
@@ -47,6 +50,23 @@ export class ProductDataService {
       // ,'Authorization': 'Bearer'+this.authenticationService.getToken()
     });
     return this.http.get('http://localhost:8080/products/',{headers:headers,search: params}).map(res => res.json());
+  }
+
+  addProduct(product: Product,file:any):Observable<Product> {
+    const formData = new FormData();
+    let fileName: string;
+    formData.append('file', file);
+    return this.http.post('http://localhost:8080/upload', formData)
+      .flatMap(filename => {
+        product.image = filename.text();
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions ({headers: headers, method: 'post'});
+        let body = JSON.stringify(product);
+        return this.http.post('http://localhost:8080/product', body, options)
+          .map(res => {
+            return res.json()
+          })
+      });
   }
 
 
