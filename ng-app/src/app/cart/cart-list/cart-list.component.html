@@ -1,5 +1,5 @@
 <div class="container">
-<div class="row col-lg-12 center-pill">
+<div class="row col-lg-10 center-pill">
   <div *ngFor="let product of cartList let i = index" [attr.data-index]="i" class="col-lg-4">
     <!--<div class="col-lg-1">-->
     <!--&lt;!&ndash;blank&ndash;&gt;-->
@@ -31,4 +31,7 @@
     </div>
   </div>
 </div>
+  <div class="col-lg-2">
+    <button class="btn btn-primary btn-md" routerLink="/confirmPage" (click)="checkLogin()">Purchase</button>
+  </div>
 </div>

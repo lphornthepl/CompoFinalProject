@@ -12,6 +12,8 @@ import {TransactionComponent} from "./transection/transection/transaction.compon
 import {NgModule} from "@angular/core";
 import {ProductViewComponent} from './product/product-view/product-view.component';
 import {LoginComponent} from './login/login.component';
+import {ConfirmationTranferComponent} from "./confirm-page/confirmation-tranfer/confirmation-tranfer.component";
+import {ConfirmPageComponent} from "./confirm-page/confirm-page/confirm-page.component";
 
 const appRoute: Routes =[
   {
@@ -50,6 +52,14 @@ const appRoute: Routes =[
   {
     path: 'delete_user',
     component: UserDeleteComponent
+  },
+  {
+    path: 'confirmPage',
+    component: ConfirmPageComponent
+  },
+  {
+    path: 'confirmTranfer',
+    component: ConfirmationTranferComponent
   },
   {
     path: 'view_transaction',

@@ -23,6 +23,7 @@ import {HttpModule} from "@angular/http";
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {AuthenticationService} from './service/authentication.service';
+import {ConfirmationTranferComponent} from "./confirm-page/confirmation-tranfer/confirmation-tranfer.component";
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {AuthenticationService} from './service/authentication.service';
     UserAddComponent,
     UserDeleteComponent,
     LoginComponent,
+    ConfirmationTranferComponent,
 
   ],
   imports: [
