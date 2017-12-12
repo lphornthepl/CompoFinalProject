@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: ProductDataSource,inMemoryDB,DBDataSource
+    active: ProductDataSource,inMemoryDB,TransactionDataSource,DBDataSource
   http:
     multipart:
       max-file-size: 10MB

@@ -2,14 +2,19 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "compofinalproject.demo.service.VisitorServiceImpl",
-      "name": "server",
-      "type": "compofinalproject.demo.service.VisitorServiceImpl"
-    },
-    {
       "sourceType": "compofinalproject.demo.config.DataLoader",
       "name": "server",
       "type": "compofinalproject.demo.config.DataLoader"
+    },
+    {
+      "sourceType": "compofinalproject.demo.service.TransactionServiceImpl",
+      "name": "server",
+      "type": "compofinalproject.demo.service.TransactionServiceImpl"
+    },
+    {
+      "sourceType": "compofinalproject.demo.service.VisitorServiceImpl",
+      "name": "server",
+      "type": "compofinalproject.demo.service.VisitorServiceImpl"
     },
     {
       "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
@@ -32,6 +37,11 @@
       "sourceType": "compofinalproject.demo.service.ShopkeeperServiceImpl",
       "name": "server.shopkeepers",
       "type": "java.util.List<compofinalproject.demo.entity.Shopkeeper>"
+    },
+    {
+      "sourceType": "compofinalproject.demo.service.TransactionServiceImpl",
+      "name": "server.transactions",
+      "type": "java.util.List<compofinalproject.demo.entity.Transaction>"
     },
     {
       "sourceType": "compofinalproject.demo.service.VisitorServiceImpl",

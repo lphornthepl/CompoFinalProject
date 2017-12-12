@@ -1,14 +1,8 @@
 package compofinalproject.demo.config;
 
 
-import compofinalproject.demo.dao.CustomerDao;
-import compofinalproject.demo.dao.ProductDao;
-import compofinalproject.demo.dao.ShopkeeperDao;
-import compofinalproject.demo.dao.VisitorDao;
-import compofinalproject.demo.entity.Customer;
-import compofinalproject.demo.entity.Product;
-import compofinalproject.demo.entity.Shopkeeper;
-import compofinalproject.demo.entity.Visitor;
+import compofinalproject.demo.dao.*;
+import compofinalproject.demo.entity.*;
 import compofinalproject.demo.entity.security.Authority;
 import compofinalproject.demo.entity.security.AuthorityName;
 import compofinalproject.demo.entity.security.User;
@@ -68,6 +62,13 @@ public class DataLoader  implements ApplicationRunner {
     User user1,user2,user3;
 
 
+    TransactionDao transactionDao;
+
+    @Autowired
+    public void setTransactionDaoDao(TransactionDao transactionDao) {
+        this.transactionDao = transactionDao;
+    }
+
     ShopkeeperDao shopkeeperDao;
 
     @Autowired
@@ -125,6 +126,17 @@ public class DataLoader  implements ApplicationRunner {
 
         shopkeeperDao.addShopkeeper(shopkeeper1);
         shopkeeperDao.addShopkeeper(shopkeeper2);
+
+        Transaction transaction1 = Transaction.builder().Date("22-07-2017").typeOfPayment("Transfer").build();
+        transactionDao.addTransaction(transaction1);
+        transaction1.addProduct(product1);
+        transaction1.addProduct(product2);
+
+        Transaction transaction2 = Transaction.builder().Date("05-06-2017").typeOfPayment("PayPal").build();
+        transactionDao.addTransaction(transaction2);
+        transaction2.addProduct(product3);
+        transaction2.addProduct(product4);
+
 
         Visitor visitor1 = Visitor.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
                 .gpa(2.15).image(imageBaseUrl + "mitsuha.gif").feature(true)
