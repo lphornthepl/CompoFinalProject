@@ -31,7 +31,7 @@ public class TransactionDaoImpl implements TransactionDao {
     @Override
     @Transactional
     public List<Transaction> getTransactionSearch(String searchText) {
-        return null;//transactionRepository.findByTransactionNameIgnoreCaseContainingOrDescriptionIgnoreCaseContaining(searchText,searchText);
+        return transactionRepository.findByTypeOfPaymentIgnoreCaseContainingOrDateIgnoreCaseContaining(searchText,searchText);
     }
 
     @Override
@@ -42,6 +42,11 @@ public class TransactionDaoImpl implements TransactionDao {
     @Override
     public Transaction addTransaction(Transaction transaction) {
         return transactionRepository.save(transaction);
+    }
+
+    @Override
+    public Transaction findByType(String searchType) {
+        return null;
     }
 
 }

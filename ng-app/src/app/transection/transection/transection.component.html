@@ -15,27 +15,18 @@
 
   <table class="w3-table-all" >
     <thead>
-    <tr class="w3-red">
-      <th style="width:450px;">Name</th>
+    <tr class="w3-red"  >
+      <th style="width:450px;">Payment type</th>
       <th>Transaction ID</th>
       <th>Date</th>
     </tr>
     </thead>
-    <tr >
-      <td>Jill</td>
-      <td>Smith</td>
-      <td>50</td>
+    <tr  *ngFor="let transaction of transactions">
+      <td>{{transaction.typeOfPayment}}</td>
+      <td>{{transaction.id}}</td>
+      <td style="width: 200px;">{{transaction.date}}</td>
     </tr>
-    <tr >
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94</td>
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-    </tr>
+
   </table>
 </div>
 

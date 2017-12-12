@@ -23,6 +23,7 @@ import {HttpModule} from "@angular/http";
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {AuthenticationService} from './service/authentication.service';
+import {TransactionService} from './service/transaction.service';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import {AuthenticationService} from './service/authentication.service';
   imports: [
     BrowserModule, AppRoutingModule, HttpModule, FormsModule
   ],
-  providers: [ProductDataService,AuthenticationService],
+  providers: [ProductDataService,AuthenticationService,TransactionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

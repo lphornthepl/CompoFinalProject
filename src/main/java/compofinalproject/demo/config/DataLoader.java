@@ -127,12 +127,12 @@ public class DataLoader  implements ApplicationRunner {
         shopkeeperDao.addShopkeeper(shopkeeper1);
         shopkeeperDao.addShopkeeper(shopkeeper2);
 
-        Transaction transaction1 = Transaction.builder().Date("22-07-2017").typeOfPayment("Transfer").build();
+        Transaction transaction1 = Transaction.builder().date("22-07-2017").typeOfPayment("Transfer").build();
         transactionDao.addTransaction(transaction1);
         transaction1.addProduct(product1);
         transaction1.addProduct(product2);
 
-        Transaction transaction2 = Transaction.builder().Date("05-06-2017").typeOfPayment("PayPal").build();
+        Transaction transaction2 = Transaction.builder().date("05-06-2017").typeOfPayment("PayPal").build();
         transactionDao.addTransaction(transaction2);
         transaction2.addProduct(product3);
         transaction2.addProduct(product4);

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductDataService} from "../../service/product-data-service";
-import {Product} from "../product";
 import {Router} from '@angular/router';
+import {TransactionService} from '../../service/transaction.service';
+import {Transaction} from '../transaction';
 
 @Component({
   selector: 'app-transection',
@@ -11,42 +11,26 @@ import {Router} from '@angular/router';
 export class TransactionComponent implements OnInit {
 
 
-  constructor(private productDataService: ProductDataService, private router: Router) {
+  constructor(private transactionService: TransactionService, private router: Router) {
   }
 
-
-
-  products: Product[];
+  transactions: Transaction[];
 
 
   ngOnInit() {
-    this.productDataService.getProductData()
-      .subscribe(products => this.products = products);
-
-
-  }
-
-  showDetail(product: Product) {
-    this.router.navigate(['/detail', product.productId]);
+    this.transactionService.getTransactionData()
+      .subscribe(transactions => this.transactions = transactions);
 
   }
-
-
-
-  addToCart(product: Product) {
-      this.productDataService.getProductIncart().push(product);
-    //}
-  }
-
   search: string;
-
   onSearch() {
-    this.productDataService.findProduct(this.search).subscribe(products => this.products = products, (error) => {
+    this.transactionService.findTransaction(this.search).subscribe(transactions => this.transactions = transactions, (error) => {
       if (error.status === 401) {
-        this.router.navigate(['product'], {queryParams: {source: 'product'}})
+        this.router.navigate(['login'], {queryParams: {source: 'product'}})
       }
     })
   }
+
 
 
 }

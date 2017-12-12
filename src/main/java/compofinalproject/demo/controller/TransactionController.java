@@ -69,4 +69,15 @@ public class TransactionController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
+
+    @GetMapping("/transactions")
+    public ResponseEntity<?> queryProduct(@RequestParam("search") String query) {
+        List<Transaction> transactions = transactionService.queryTransaction(query);
+        if (transactions != null)
+            return ResponseEntity.ok(transactions);
+        else
+            //http code 204
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+
+    }
 }

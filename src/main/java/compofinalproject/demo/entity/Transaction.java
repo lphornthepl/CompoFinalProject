@@ -23,7 +23,7 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
-    String Date;
+    String date;
 
     String typeOfPayment;
 
