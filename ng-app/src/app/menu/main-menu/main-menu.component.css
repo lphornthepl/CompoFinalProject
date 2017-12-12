@@ -115,7 +115,15 @@ li.right {
 
 
 
+p.p1{
+  background: -webkit-linear-gradient(#fff, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
+ font-size: 30px;
+ width:100px;
+ top:10px;
+}
 
 
 
