@@ -21,6 +21,7 @@ export class ProductAddComponent implements OnInit {
 
   @ViewChild('fileInput') inputEl: ElementRef;
   addProduct(product: Product) {
+    product.show = true;
     let result: Product;
     console.log(product)
     let inputEl: HTMLInputElement = this.inputEl.nativeElement;

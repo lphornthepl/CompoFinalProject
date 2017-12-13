@@ -59,6 +59,13 @@ public class DataLoader  implements ApplicationRunner {
         this.customerDao = customerDao;
     }
 
+    @Autowired
+    public void setCartDao(CartDao cartDao) {
+        this.cartDao = cartDao;
+    }
+
+    CartDao cartDao;
+
     CustomerDao customerDao;
     User user1,user2,user3;
 
@@ -137,6 +144,9 @@ public class DataLoader  implements ApplicationRunner {
         transactionDao.addTransaction(transaction2);
         transaction2.addProduct(product3);
         transaction2.addProduct(product4);
+
+        Cart cart1 = Cart.builder().CartId("1").build();
+        cartDao.addCart(cart1);
 
 
         Visitor visitor1 = Visitor.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
