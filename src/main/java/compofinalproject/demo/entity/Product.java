@@ -26,5 +26,6 @@ public class Product {
     int price;
     int amount;
     String description;
+    boolean Show = true ;
 
 }

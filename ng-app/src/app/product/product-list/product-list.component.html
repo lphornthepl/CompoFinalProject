@@ -1,5 +1,5 @@
 
-<div class="row panel-body">
+<div class="row panel-body" style="padding-top: 60px;">
   <div class="col-md-6 col-sm-6 col-lg-6  col-lg-offset-3">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
@@ -11,7 +11,8 @@
 </div>
 
 <div class="row col-lg-12 " style="margin-left: 4px;">
-<div *ngFor="let product of products" class="col-lg-4">
+<div *ngFor="let product of products"   class="col-lg-4">
+  <div *ngIf="product.show == true">
   <!--<div class="col-lg-1">-->
     <!--&lt;!&ndash;blank&ndash;&gt;-->
   <!--</div>-->
@@ -42,6 +43,7 @@
     </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 </div>

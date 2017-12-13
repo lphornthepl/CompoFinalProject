@@ -10,6 +10,7 @@ public interface ProductService {
     Product addProduct(Product product);
     Product getProductForTransfer(String searchName);
     List<Product> queryProduct(String query);
+    Product updateProduct(Product product);
 
 
 }

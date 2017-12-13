@@ -1,0 +1,32 @@
+<div [hidden]="!isNoData">
+
+  <div class="alert alert-danger" role="alert">There is no data for the specific id</div>
+</div>
+<div class="container" style="padding-top: 100px;">
+  <div class="col-lg-12 panel panel-group panel-primary" [hidden]="isNoData"style="border: none;">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-2 control-label" >Product name : </label>
+        <div class="col-sm-10" style="top:7px;">
+          <input type="text" value="{{product?.productName}} " name="id" id="id"[(ngModel)]="product.productName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Price : </label>
+        <div class="col-sm-10" style="top:8px;">
+          <input type="text" value="{{product?.price}}" name="name" id="price" [(ngModel)]="product.price">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Description : </label>
+        <div class="col-sm-10" style="top:8px;">
+          <input type="text" value="{{product?.description}}" name="descrition" id="descrition" [(ngModel)]="product.description">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="updateProduct(product)">Submit</button>
+      <button class="btn btn-primary" (click)="deleteProduct(product)">Delete</button>
+    </form>
+  </div>
+</div>
+
+

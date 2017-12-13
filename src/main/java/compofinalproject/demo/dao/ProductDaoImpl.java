@@ -46,4 +46,9 @@ public class ProductDaoImpl implements ProductDao {
         return null;
     }
 
+    @Override
+    public Product updateProduct(Product product) {
+        return productRepository.save(product);
+    }
+
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="top: 80px;">
 <div class="row col-lg-12 center-pill" >
   <div *ngFor="let product of products" class="col-lg-3">
     <!--<div class="col-lg-1">-->
@@ -6,11 +6,11 @@
     <!--</div>-->
 
 
-    <div class="panel   col-lg-12"  style="border-width: 3px; border-color:#000000; height: 350px;">
+    <div class="panel   col-lg-12" *ngIf="product.show == true"  style="border-width: 3px; border-color:#000000; height: 350px;">
       <div class="page-header">
         <p class="panel-title">{{product.productName}}</p>
         <div class="buttonEdit">
-        <button  class="button button1" onclick="myFunction()"  ><p class="a">Edit</p></button>
+          <button  class="button button1" (click)="showEditDetail(product)"><p class="a">Edit</p></button>
 
         </div>
       </div>

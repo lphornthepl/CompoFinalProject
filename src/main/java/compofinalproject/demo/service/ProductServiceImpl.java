@@ -65,6 +65,10 @@ public class ProductServiceImpl implements ProductService {
         return productDao.getProductsSearch(query);
     }
 
+    @Override
+    public Product updateProduct(Product product) {
+        return productDao.updateProduct(product);
+    }
 
 
 }

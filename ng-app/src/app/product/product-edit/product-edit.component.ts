@@ -20,8 +20,9 @@ export class ProductEditComponent implements OnInit {
 
 
   }
-  showDetail(product: Product){
-    this.router.navigate(['/detail',product.productId]);
+
+  showEditDetail(product: Product){
+    this.router.navigate(['/edit_product_list',product.productId]);
 
     }
 

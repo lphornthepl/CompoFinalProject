@@ -1,5 +1,5 @@
 
-<div class="row panel-body">
+<div class="row panel-body" style="padding-top: 60px;">
   <div class="col-md-6 col-sm-6 col-lg-6  col-lg-offset-3">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
@@ -11,7 +11,7 @@
 </div>
 <div class="w3-container">
   <h2>View Transaction</h2>
-  <p>Name/Id/Date</p>
+  <p>Type/Date</p>
 
   <table class="w3-table-all" >
     <thead>
@@ -19,12 +19,14 @@
       <th style="width:450px;">Payment type</th>
       <th>Transaction ID</th>
       <th>Date</th>
+      <th>Detail</th>
     </tr>
     </thead>
     <tr  *ngFor="let transaction of transactions">
-      <td>{{transaction.typeOfPayment}}</td>
       <td>{{transaction.id}}</td>
+      <td >{{transaction.typeOfPayment}}</td>
       <td style="width: 200px;">{{transaction.date}}</td>
+      <button  class="button button1" (click)="showDetail(transaction)"><p class="a">Detail</p></button>
     </tr>
 
   </table>

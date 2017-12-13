@@ -1,7 +1,13 @@
 import {Component, OnInit} from '@angular/core';
+
 import {Router} from '@angular/router';
 import {TransactionService} from '../../service/transaction.service';
 import {Transaction} from '../transaction';
+
+import {ProductDataService} from "../../service/product-data-service";
+
+import {Product} from "../../product/product";
+
 
 @Component({
   selector: 'app-transection',
@@ -29,6 +35,11 @@ export class TransactionComponent implements OnInit {
         this.router.navigate(['login'], {queryParams: {source: 'product'}})
       }
     })
+  }
+
+  showDetail(transaction: Transaction) {
+    this.router.navigate(['/detail/transaction', transaction.id]);
+
   }
 
 

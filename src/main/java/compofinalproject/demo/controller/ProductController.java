@@ -108,4 +108,9 @@ public class ProductController {
 
     }
 
+    @PutMapping("/product")
+    public Product updateProduct(@RequestBody Product product){
+        return productService.updateProduct(product);
+    }
+
 }

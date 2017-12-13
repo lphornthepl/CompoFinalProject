@@ -21,7 +21,7 @@ export class TransactionService {
 
   getTransaction(id: number) {
     let transaction: Transaction;
-    return this.http.get('http://localhost:8080/transaction/'+id,{headers: this.headers})
+    return this.http.get('http://localhost:8080/detail/transaction/'+id,{headers: this.headers})
       .map((res:Response) => {
         if (res){
           if (res.status === 200){

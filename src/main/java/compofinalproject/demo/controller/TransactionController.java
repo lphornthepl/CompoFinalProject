@@ -34,7 +34,7 @@ public class TransactionController {
     }
 
     @CrossOrigin
-    @GetMapping("transaction/{id}")
+    @GetMapping("detail/transaction/{id}")
     public ResponseEntity getStudent(@PathVariable("id")long id){
         Transaction transaction = transactionService.findById(id);
         if (transaction!= null)

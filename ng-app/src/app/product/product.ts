@@ -6,4 +6,5 @@ export class Product {
   price: number;
   amount: number;
   description: string;
+  show: boolean ;
 }

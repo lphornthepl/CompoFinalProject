@@ -80,5 +80,13 @@ export class ProductDataService {
       })
   }
 
+  updateProduct(product:Product){
+    let headers = new Headers({'Content-Type': 'application/json',});
+    let options = new RequestOptions({headers: this.headers});
+    return this.http.put('http://localhost:8080/product' , JSON.stringify(product),options)
+      .map((respone:Response) => respone.json()
+      );
+  }
+
 
 }

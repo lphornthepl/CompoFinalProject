@@ -24,7 +24,9 @@ import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {AuthenticationService} from './service/authentication.service';
 import {TransactionService} from './service/transaction.service';
-
+import {ConfirmationTranferComponent} from "./confirm-page/confirmation-tranfer/confirmation-tranfer.component";
+import { TransectionViewComponent } from './transection/transection-view/transection-view.component';
+import {ProductEditListComponent} from './product/product-edit-list/product-edit-list.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {TransactionService} from './service/transaction.service';
     UserAddComponent,
     UserDeleteComponent,
     LoginComponent,
-
+    ConfirmationTranferComponent,
+    TransectionViewComponent,
+    ProductEditListComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpModule, FormsModule
